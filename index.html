@@ -4,55 +4,107 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página de Prueba</title>
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            margin: 0;
-        }
-        header, footer {
-            background-color: #f8f9fa;
-            padding: 1em;
-            text-align: center;
-        }
-        main {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        .content {
-            width: 80%;
-            margin: 1em 0;
-            padding: 1em;
-            background-color: #e9ecef;
-            border: 1px solid #dee2e6;
-        }
-    </style>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
 <body>
-    <header>
+
+    <header class="bg-light text-center py-3">
         <h1>Encabezado</h1>
         <p>Información básica del encabezado</p>
+        <a href="https://www.ejemplo.com" class="btn btn-primary">Enlace al sitio de ejemplo</a>
     </header>
-    <main>
-        <div class="content">
-            <h2>Sección 1</h2>
-            <p>Contenido de la sección 1</p>
+    <main class="container my-4">
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2 class="card-title">Sección 1</h2>
+                <p class="card-text">Contenido de la sección 1</p>
+                <a href="https://www.ejemplo1.com" class="btn btn-secondary">Enlace a la sección 1</a>
+            </div>
         </div>
-        <div class="content">
-            <h2>Sección 2</h2>
-            <p>Contenido de la sección 2</p>
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2 class="card-title">Sección 2</h2>
+                <p class="card-text">Contenido de la sección 2</p>
+                <a href="https://www.ejemplo2.com" class="btn btn-secondary">Enlace a la sección 2</a>
+            </div>
         </div>
-        <div class="content">
-            <h2>Sección 3</h2>
-            <p>Contenido de la sección 3</p>
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2 class="card-title">Sección 3</h2>
+                <p class="card-text">Contenido de la sección 3</p>
+                <a href="https://www.ejemplo3.com" class="btn btn-secondary">Enlace a la sección 3</a>
+            </div>
         </div>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Correo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Juan</td>
+                        <td>Pérez</td>
+                        <td>juan.perez@ejemplo.com</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>María</td>
+                        <td>García</td>
+                        <td>maria.garcia@ejemplo.com</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Carlos</td>
+                        <td>Rodríguez</td>
+                        <td>carlos.rodriguez@ejemplo.com</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <button type="button" class="btn btn-info" id="openModalBtn">Abrir Modal</button>
     </main>
-    <footer>
+    <footer class="bg-light text-center py-3">
         <p>Información básica del pie de página</p>
+        <a href="https://www.ejemplo-footer.com" class="btn btn-primary">Enlace al pie de página</a>
     </footer>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Título del Modal</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Contenido del modal.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary">Guardar cambios</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#openModalBtn').click(function() {
+                $('#exampleModal').modal('show');
+            });
+        });
+    </script>
 </body>
 </html>
